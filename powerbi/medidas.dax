@@ -1,0 +1,22 @@
+// EXERCÍCIO 10 - Aurora Eletro: medidas DAX
+// Complete os trechos ____ e crie cada medida em "Nova medida", dentro da tabela Medidas.
+
+Faturamento = SUM ( ____ )
+
+Qtd Vendas = COUNTROWS ( ____ )
+
+Ticket Médio = DIVIDE ( ____, ____ )
+
+Margem = [Faturamento] - SUM ( ____ )
+
+Margem % = DIVIDE ( ____, ____ )
+
+Meta = SUM ( fato_metas[meta_faturamento] )
+
+% Atingimento = DIVIDE ( ____, ____ )
+
+Faturamento Ano Anterior =
+CALCULATE ( [Faturamento], SAMEPERIODLASTYEAR ( ____ ) )
+
+Crescimento % =
+DIVIDE ( ____ - ____, ____ )

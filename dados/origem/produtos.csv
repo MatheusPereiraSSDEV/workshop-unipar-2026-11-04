@@ -1,0 +1,48 @@
+id_produto;descricao;categoria;preco_venda;preco_custo;ativo
+P001;Notebook Aurora 14;Informática;3899.00;2.237,34;S
+P002;Notebook Gamer Aurora X;Informática;7499.00;5.450,45;Sim
+P003;Monitor 24 Full HD;Informática;899.00;635,30;Sim
+P004;Monitor 27 QHD;Informática;1.799,00;1.259,67;N
+P005;Teclado Mecânico;Informática;349,90;198,09;Sim
+P006;Mouse sem Fio;INFORMÁTICA;119,90;82,24;S
+P007;SSD 1TB;Informática;459.00;326,36;S
+P008;  ROTEADOR WI-FI 6  ;INFORMÁTICA;529,00;367,46;S
+P009;Impressora Multifuncional;Informática;1149.00;833,36;N
+P010;Webcam Full HD;Informática;249,90;138,68;Sim
+P011;Headset Office;Informática;189.90;107,89;S
+P012;Smartphone A15 128GB;Celulares;1299.90;825,55;Sim
+P013;Smartphone A35 256GB;Celulares;2199.00;1.384,56;N
+P014;Smartphone Pro 512GB;Celulares;6999.00;5.145,99;S
+P015;Capa Protetora;Celulares;59.90;39,84;N
+P016;Película de Vidro;Celular;39,90;29,02;S
+P017;Carregador Turbo 33W;Celulares;129.90;83,97;Sim
+P018;Power Bank 20000mAh;Celulares;199.90;136,90;N
+P019;Smartwatch Fit;celulares;699.00;521,30;S
+P020;Fone Bluetooth In-Ear;Áudio;249.90;164,84;Sim
+P021;Fone Over-Ear ANC;Audio;899,00;572,32;S
+P022;Caixa de Som Portátil;Áudio;399,00;271,77;N
+P023;Soundbar 2.1;Áudio;1.299,00;955,27;Sim
+P024;Microfone USB;Áudio;449,00;288,86;Sim
+P025;Toca-Discos Retrô;Áudio;899.90;595,34;S
+P026;Air Fryer 5L;Eletrodomésticos;499,00;320,12;N
+P027;Micro-ondas 30L;Eletrodomésticos;799,00;480,81;N
+P028;Cafeteira Expresso;Eletrodomésticos;1199.00;761,55;S
+P029;Aspirador Robô;Eletrodomésticos;1.599,00;1.168,31;Sim
+P030;Liquidificador 1200W;Eletrodomésticos;249,90;144,76;Sim
+P031;Ventilador de Torre;Eletrodomésticos;359,90;239,74;S
+P032;Purificador de Água;Eletrodomésticos;899.00;539,01;S
+P033;Sanduicheira;Eletrodomésticos;129,90;88,81;S
+P034;Console Next Gen;Games;4299.00;2.935,86;Sim
+P035;Controle sem Fio;Games;449.00;308,89;Sim
+P036;Jogo Corrida 2026;Games;299.00;199,61;N
+P037;Jogo Futebol 26;GAMES;349,00;227,18;S
+P038;Cadeira Gamer;Games;1.299,00;917,99;Sim
+P039;Headset Gamer 7.1;Games;399,00;250,60;S
+P040;Smart TV 43 4K;TV e Video;2199.00;1.380,69;S
+P041;Smart TV 55 4K;TV e Vídeo;3299.00;1.831,33;Sim
+P042;Smart TV 65 QLED;TV e Video;5499.00;3.383,03;S
+P043;Streaming Stick 4K;TV e Vídeo;349,00;202,69;S
+P044;Projetor Portátil;tv e vídeo;1.899,00;1.218,71;Sim
+P045;Suporte de Parede TV;TV e Vídeo;149,90;83,47;N
+P004;Monitor 27 QHD;Informática;1.799,00;1.259,67;N
+P021;Fone Over-Ear ANC;Audio;899,00;572,32;S

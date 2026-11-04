@@ -1,0 +1,20 @@
+# Ambiente virtual e IDEs
+.venv/
+venv/
+.idea/
+.vscode/
+
+# Python
+__pycache__/
+*.pyc
+
+# Camadas geradas pelo pipeline (cada aluno gera as suas)
+dados/bronze/
+dados/silver/
+dados/gold/
+
+# Power BI e arquivos temporários
+*.pbix
+~$*
+.DS_Store
+Thumbs.db
