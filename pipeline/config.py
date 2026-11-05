@@ -1,19 +1,20 @@
+# -*- coding: utf-8 -*-
 """Caminhos e utilitários compartilhados por todas as etapas do pipeline."""
 import sys
 from pathlib import Path
 
 import pandas as pd
 
-
+# Garante acentos corretos no terminal do Windows
 try:
     sys.stdout.reconfigure(encoding="utf-8")
 except Exception:
     pass
 
-RAIZ = Path(__file__).resolve().parents[1]
+RAIZ = Path(__file__).resolve().parents[1]      # pasta do projeto
 DADOS = RAIZ / "dados"
-ORIGEM = DADOS / "origem"
-CAMADAS = {c: DADOS / c for c in ("bronze", "silver", "gold")}
+ORIGEM = DADOS / "origem"                       # arquivos recebidos das "fontes"
+CAMADAS = {c: DADOS / c for c in ("bronze", "silver", "gold")}   # uma pasta por camada
 
 for pasta in CAMADAS.values():
     pasta.mkdir(parents=True, exist_ok=True)

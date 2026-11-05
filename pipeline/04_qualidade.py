@@ -46,9 +46,7 @@ def main():
     #   dica: LEFT JOIN da fato com a dimensão e conte onde a chave da dimensão ficou NULL
     orfas = valor("""SELECT COUNT(*) FROM fato_vendas f
                      LEFT JOIN dim_produto d ON d.sk_produto = f.sk_produto
-    orfas = valor("""SELECT COUNT(*) FROM fato_vendas f
-                     LEFT JOIN ____ d ON ____ = ____
-                     WHERE ____ IS NULL""")
+                     WHERE d.sk_produto IS NULL""")
     checar("fato_vendas -> dim_produto sem órfãos", orfas == 0, f"{orfas} órfãs")
     orfas = valor("""SELECT COUNT(*) FROM fato_vendas f
                      LEFT JOIN dim_calendario d ON d.sk_data = f.sk_data WHERE d.sk_data IS NULL""")

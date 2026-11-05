@@ -1,22 +1,25 @@
-// EXERCÍCIO 10 - Aurora Eletro: medidas DAX
-// Complete os trechos ____ e crie cada medida em "Nova medida", dentro da tabela Medidas.
+// GABARITO - EXERCÍCIO 10 - Aurora Eletro: medidas DAX (uso do instrutor)
 
-Faturamento = SUM ( ____ )
+Faturamento = SUM ( fato_vendas[valor_liquido] )
 
-Qtd Vendas = COUNTROWS ( ____ )
+Qtd Vendas = COUNTROWS ( fato_vendas )
 
-Ticket Médio = DIVIDE ( ____, ____ )
+Ticket Médio = DIVIDE ( [Faturamento], [Qtd Vendas] )
 
-Margem = [Faturamento] - SUM ( ____ )
+Margem = [Faturamento] - SUM ( fato_vendas[custo_total] )
 
-Margem % = DIVIDE ( ____, ____ )
+Margem % = DIVIDE ( [Margem], [Faturamento] )
 
 Meta = SUM ( fato_metas[meta_faturamento] )
 
-% Atingimento = DIVIDE ( ____, ____ )
+% Atingimento = DIVIDE ( [Faturamento], [Meta] )
 
 Faturamento Ano Anterior =
-CALCULATE ( [Faturamento], SAMEPERIODLASTYEAR ( ____ ) )
+CALCULATE ( [Faturamento], SAMEPERIODLASTYEAR ( dim_calendario[data] ) )
 
 Crescimento % =
-DIVIDE ( ____ - ____, ____ )
+DIVIDE ( [Faturamento] - [Faturamento Ano Anterior], [Faturamento Ano Anterior] )
+
+// Extra: faturamento das vendas com cliente não identificado
+Faturamento Sem Cliente =
+CALCULATE ( [Faturamento], dim_cliente[sk_cliente] = 0 )

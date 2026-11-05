@@ -39,9 +39,9 @@ def converter_data(serie):
     s = serie.astype("string").str.strip()
     # EXERCÍCIO 2: converta os dois formatos e junte os resultados
     #   dica: errors="coerce" transforma o que não é data válida em NaT, sem quebrar o código
-    iso = pd.to_datetime(s, format="____", errors="coerce")
-    br = pd.to_datetime(s, format="____", errors="coerce")
-    return iso.fillna(____)
+    iso = pd.to_datetime(s, format="%Y-%m-%d", errors="coerce")
+    br = pd.to_datetime(s, format="%d/%m/%Y", errors="coerce")
+    return iso.fillna(br)
 
 
 def converter_numero(serie):
@@ -49,7 +49,7 @@ def converter_numero(serie):
     s = serie.astype("string").str.strip()
     formato_br = s.str.contains(",", na=False)
     # EXERCÍCIO 3: no formato brasileiro, tire o ponto de milhar e troque a vírgula decimal por ponto
-    s = s.where(~formato_br, s.str.replace("____", "", regex=False).str.replace("____", "____", regex=False))
+    s = s.where(~formato_br, s.str.replace(".", "", regex=False).str.replace(",", ".", regex=False))
     s = s.str.replace(r"[^0-9.\-]", "", regex=True)            # remove 'un', '%', espaços...
     return pd.to_numeric(s.astype(object), errors="coerce").astype("float64")
 
@@ -101,7 +101,7 @@ def tratar_vendas(produtos):
     linhas_bronze = len(df)
 
     # EXERCÍCIO 4: remova as linhas duplicadas (exportação repetida do ERP)
-    df = df.____()
+    df = df.drop_duplicates()
     duplicadas = linhas_bronze - len(df)
 
     df["data_venda"] = converter_data(df["data_venda"])
@@ -112,7 +112,7 @@ def tratar_vendas(produtos):
     df["status"] = df["status"].map(chave).map(MAPA_STATUS)
 
     # EXERCÍCIO 5: padronize o canal usando a função chave() e o dicionário MAPA_CANAL
-    df["canal"] = df["canal"].map(____).map(____)
+    df["canal"] = df["canal"].map(chave).map(MAPA_CANAL)
 
     # Regra de negócio: preço vazio na venda -> usa o preço de tabela do produto
     preco_tabela = produtos.set_index("id_produto")["preco_venda"]
@@ -129,9 +129,9 @@ def tratar_vendas(produtos):
     #   valor_bruto    = quantidade x valor_unitario
     #   valor_desconto = valor_bruto x desconto_pct / 100
     #   valor_liquido  = valor_bruto - valor_desconto
-    df["valor_bruto"] = ____
-    df["valor_desconto"] = ____
-    df["valor_liquido"] = ____
+    df["valor_bruto"] = (df["quantidade"] * df["valor_unitario"]).round(2)
+    df["valor_desconto"] = (df["valor_bruto"] * df["desconto_pct"] / 100).round(2)
+    df["valor_liquido"] = (df["valor_bruto"] - df["valor_desconto"]).round(2)
 
     df["quantidade"] = df["quantidade"].astype("int64")
     return df, rejeitadas, linhas_bronze, duplicadas

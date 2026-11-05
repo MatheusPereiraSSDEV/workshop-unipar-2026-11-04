@@ -28,9 +28,9 @@ SELECT 0 AS sk_produto, 'N/I' AS id_produto, 'Produto não identificado' AS desc
        'Não informada' AS categoria, CAST(NULL AS DOUBLE) AS preco_venda,
        CAST(NULL AS DOUBLE) AS preco_custo, 'N' AS ativo
 UNION ALL
-SELECT ROW_NUMBER() OVER (ORDER BY ____),
-       ____
-FROM ____;
+SELECT ROW_NUMBER() OVER (ORDER BY id_produto),
+       id_produto, descricao, categoria, preco_venda, preco_custo, ativo
+FROM silver_produtos;
 
 -- ---------------------------------------------------------------------
 -- dim_canal
@@ -85,8 +85,8 @@ SELECT
     v.valor_liquido,
     ROUND(v.quantidade * p.preco_custo, 2)            AS custo_total
 FROM silver_vendas v
-LEFT JOIN dim_cliente c ON ____ = ____
-LEFT JOIN dim_produto p ON ____ = ____
+LEFT JOIN dim_cliente c ON c.id_cliente = v.id_cliente
+LEFT JOIN dim_produto p ON p.id_produto = v.id_produto
 LEFT JOIN dim_canal   k ON k.canal = v.canal
 WHERE v.status = 'Concluída'
 ORDER BY v.id_venda;

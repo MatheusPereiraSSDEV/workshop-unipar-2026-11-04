@@ -40,8 +40,8 @@ def main():
         # EXERCÍCIO 1: adicione as colunas de controle
         #   _origem      -> nome do arquivo de origem (ex.: vendas.csv)
         #   _data_carga  -> data e hora desta carga (variável carga)
-        df["_origem"] = ____
-        df["_data_carga"] = ____
+        df["_origem"] = caminho.name
+        df["_data_carga"] = carga
 
         gravar(df, "bronze", tabela)
         print(f"  {tabela:<10} {len(df):>6} linhas  {caminho.name:<14} -> {arquivo('bronze', tabela).name}")
